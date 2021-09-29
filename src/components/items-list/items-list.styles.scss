@@ -1,0 +1,13 @@
+.items-list {
+    position: relative;
+    width: 28%;
+    padding: 10px;
+    height: 100%;
+    min-height: 750px;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
