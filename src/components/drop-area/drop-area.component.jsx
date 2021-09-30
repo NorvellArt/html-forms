@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 const DropArea = ({ boxItems }) => {
   return (
     <div className="drop-area">
-      {boxItems.map(boxItem => (<DropAreaItem name={boxItem} />))}
-      
+      {boxItems.map((boxItem) => (
+        <DropAreaItem name={boxItem.name} key={boxItem.id}/>
+      ))}
     </div>
   );
 };

@@ -13,7 +13,6 @@ const Button = (props) => {
   return (
     <button className="button" onClick={onHandleClick}>
       {name}
-      {console.log(props)}
     </button>
   );
 };
