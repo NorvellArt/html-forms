@@ -11,6 +11,11 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
                 ...state,
                 boxItemsList: [...state.boxItemsList, { id: shortid.generate(), name: action.payload }]
             }
+        case 'REMOVE_ITEM':
+            return{
+                ...state,
+                boxItemsList: state.boxItemsList.filter(boxItem => boxItem.id !== action.payload)
+            }
         default:
             return state
     }

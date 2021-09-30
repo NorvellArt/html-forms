@@ -6,7 +6,7 @@ const DropArea = ({ boxItems }) => {
   return (
     <div className="drop-area">
       {boxItems.map((boxItem) => (
-        <DropAreaItem name={boxItem.name} key={boxItem.id}/>
+        <DropAreaItem name={boxItem.name} key={boxItem.id} id={boxItem.id}/>
       ))}
     </div>
   );
