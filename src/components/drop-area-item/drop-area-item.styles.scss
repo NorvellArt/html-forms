@@ -11,4 +11,9 @@
     justify-content: space-between;
     height: 20px;
     align-items: center;
+
+    .buttons-block{
+        display: flex;
+        align-items: center;
+    }
 }

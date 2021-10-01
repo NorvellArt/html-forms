@@ -10,7 +10,7 @@ const RemoveButton = (props) => {
     removeItem(id)
   }
 
-  return <div className="remove-button" onClick={onHandleClick}>&#215;</div>;
+  return <div className="remove-button" onClick={onHandleClick} title='Remove'>&#215;</div>;
 };
 
 const mapDispatchToProps = (dispatch) => ({
