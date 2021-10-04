@@ -7,7 +7,7 @@ const DropAreaItem = (props) => {
     <div className="drop-area-item">
       {props.name}
       <div className="buttons-block">
-        <EditButton name={props.name}/>
+        <EditButton name={props.name} id={props.id}/>
         <RemoveButton id={props.id} />
       </div>
     </div>

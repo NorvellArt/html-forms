@@ -1,4 +1,9 @@
-export const openSidebarConsole = (name) => ({
+export const openSidebarConsole = (name, id) => ({
     type: 'OPEN_SIDEBAR_CONSOLE',
-    payload: name
+    name,
+    id,
+})
+
+export const closeSidebarConsole = () => ({
+    type: 'CLOSE_SIDEBAR_CONSOLE'
 })

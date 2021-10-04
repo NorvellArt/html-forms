@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
     sidebarConsole: {
         isHidden: true,
-        name: ''
+        name: '',
+        id: ''
     }
 }
 
@@ -12,7 +13,15 @@ const sidebarConsoleReduser = (state = INITIAL_STATE, action) => {
                 ...state,
                 sidebarConsole: {
                     isHidden: !state.sidebarConsole,
-                    name: action.payload
+                    name: action.name,
+                    id:action.id
+                }
+            }
+        case 'CLOSE_SIDEBAR_CONSOLE':
+            return{
+                ...state,
+                sidebarConsole: {
+                    isHidden: !!state.sidebarConsole
                 }
             }
         default:

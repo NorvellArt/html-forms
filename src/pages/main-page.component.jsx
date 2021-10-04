@@ -6,14 +6,14 @@ import SidebarConsole from "../components/sidebar-console/sidebar-console.compon
 import { connect } from "react-redux";
 
 const MainPage = (props) => {
-  const { sidebarConsole: {isHidden, name} } = props;
+  const { sidebarConsole: {isHidden, name, id} } = props;
 
   return (
     <div className="main-page">
       <DropArea />
       <ItemsList />
-      {isHidden ? null : <SidebarConsole name={name} />}
-      {console.log(props.sidebarConsole.isHidden)}
+      {isHidden ? null : <SidebarConsole name={name} id={id} />}
+      {console.log(props)}
     </div>
   );
 };

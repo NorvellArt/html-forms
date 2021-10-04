@@ -3,22 +3,21 @@ import { connect } from "react-redux";
 import { openSidebarConsole } from "../../redux/sidebar-console/sidebar-console.actions";
 
 const EditButton = (props) => {
-  const { name, openSidebarConsole } = props;
+  const { name, id, openSidebarConsole } = props;
 
   const onHandleClick = () => {
-    openSidebarConsole(name)
+    openSidebarConsole(name, id)
   }
 
   return (
     <div className="edit-button" title="Edit" onClick={onHandleClick}>
       &#x270E;
-      {console.log(props)}
     </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  openSidebarConsole: name => dispatch(openSidebarConsole(name))
+  openSidebarConsole: (name, id)=> dispatch(openSidebarConsole(name, id))
 });
 
 export default connect(null, mapDispatchToProps)(EditButton);
