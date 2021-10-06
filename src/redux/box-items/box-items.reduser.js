@@ -1,4 +1,5 @@
 import shortid from 'shortid'
+import produce from 'immer'
 
 const INITIAL_STATE = {
     boxItemsList: []
@@ -57,14 +58,26 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
                     }
                 default:
                     return {
-                        ...state,
-                        boxItemsList: [...state.boxItemsList, { id: shortid.generate(), name: action.payload }]
+                        state
                     }
             }
         case 'REMOVE_ITEM':
             return {
                 ...state,
                 boxItemsList: state.boxItemsList.filter(boxItem => boxItem.id !== action.payload)
+            }
+        case 'OPEN_EDIT_ITEM_CONSOLE':
+            const index = state.boxItemsList.findIndex(item => item.id === action.payload);
+            /* const newArray = [...state.boxItemsList];
+            newArray[index].sidebarIsHidden = !state.boxItemsList[index].sidebarIsHidden */
+            console.log(index)
+            const newArray = produce(state.boxItemsList, draftState =>{
+                draftState[index].sidebarIsHidden = !state.boxItemsList[index].sidebarIsHidden
+            })
+            console.log(newArray)
+            return {
+                ...state,
+                boxItemsList: newArray,
             }
         default:
             return state
