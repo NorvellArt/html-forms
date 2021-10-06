@@ -12,3 +12,8 @@ export const openEditItemConsole = (id) => ({
     type: 'OPEN_EDIT_ITEM_CONSOLE',
     payload: id
 })
+
+export const closeEditItemConsole = (id) => ({
+    type: 'CLOSE_EDIT_ITEM_CONSOLE',
+    payload: id
+})

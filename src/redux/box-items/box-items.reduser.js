@@ -68,16 +68,21 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
             }
         case 'OPEN_EDIT_ITEM_CONSOLE':
             const index = state.boxItemsList.findIndex(item => item.id === action.payload);
-            /* const newArray = [...state.boxItemsList];
-            newArray[index].sidebarIsHidden = !state.boxItemsList[index].sidebarIsHidden */
-            console.log(index)
             const newArray = produce(state.boxItemsList, draftState =>{
                 draftState[index].sidebarIsHidden = !state.boxItemsList[index].sidebarIsHidden
             })
-            console.log(newArray)
             return {
                 ...state,
                 boxItemsList: newArray,
+            }
+        case 'CLOSE_EDIT_ITEM_CONSOLE':
+            const index1 = state.boxItemsList.findIndex(item => item.id === action.payload);
+            const newArray1 = produce(state.boxItemsList, draftState =>{
+                draftState[index1].sidebarIsHidden = !state.boxItemsList[index1].sidebarIsHidden
+            })
+            return {
+                ...state,
+                boxItemsList: newArray1,
             }
         default:
             return state

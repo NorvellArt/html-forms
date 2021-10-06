@@ -10,9 +10,12 @@
     border-right: 1px solid rgba(34,36,38,.15);
     box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
     .sidebar-console-title{
+        position: relative;
+        left: 25px;
         display: inline-block;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 24px;
+        margin: 0 auto;
         margin-top: 20px;
     }
 }
