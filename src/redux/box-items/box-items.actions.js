@@ -17,3 +17,8 @@ export const closeEditItemConsole = (id) => ({
     type: 'CLOSE_EDIT_ITEM_CONSOLE',
     payload: id
 })
+
+export const handleChangeLabel = (id, text) => ({
+    type: 'HANDLE_CHANGE_LABEL',
+    payload: { id, text },
+})

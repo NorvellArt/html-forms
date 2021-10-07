@@ -11,16 +11,16 @@ const SettingsArea = (props) => {
   let settings;
   switch (boxItem.name) {
     case "Text Input":
-      settings = <TextInputSettings />;
+      settings = <TextInputSettings boxItem={boxItem} />;
       break;
     case "List":
-      settings = <ListSettings />;
+      settings = <ListSettings boxItem={boxItem} />;
       break;
     case "Checkbox":
-      settings = <CheckboxSettings />;
+      settings = <CheckboxSettings boxItem={boxItem} />;
       break;
     case "Submit Button":
-      settings = <SubmitButtonSettings />;
+      settings = <SubmitButtonSettings boxItem={boxItem} />;
       break;
 
     default:
@@ -32,7 +32,6 @@ const SettingsArea = (props) => {
     <div className="settings-area">
       <h3 className="settings-area-title">Settings</h3>
       {settings}
-      {console.log(boxItem)}
     </div>
   );
 };

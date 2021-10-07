@@ -1,13 +1,28 @@
-import './list-settings.styles.scss'
+import "./list-settings.styles.scss";
+import TextArea from "../text-area/text-area.component";
+import { connect } from "react-redux";
+import { handleChangeLabel } from "../../redux/box-items/box-items.actions";
 
 const ListSettings = (props) => {
-    return (
-      <div>
-        <div>Enter LABEL</div>
-        <div>Enter NUMBER of ELEMETS</div>
-        <div>Is ORDERED LIST</div>
-      </div>
-    );
+  const onHandleChangeLabel = (event) => {
+    props.handleChangeLabel(props.boxItem.id, event.target.value);
   };
-  
-  export default ListSettings;
+
+  return (
+    <div>
+      <div>
+        Enter LABEL <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
+      </div>
+      <div>Enter NUMBER of ELEMETS <TextArea /></div>
+      <div>Is ORDERED LIST</div>
+    </div>
+  );
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleChangeLabel: (id, text) => dispatch(handleChangeLabel(id, text))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ListSettings);

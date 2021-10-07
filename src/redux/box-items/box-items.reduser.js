@@ -52,7 +52,7 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
                         boxItemsList: [...state.boxItemsList, {
                             id: shortid.generate(),
                             name: action.payload,
-                            value: '',
+                            label: '',
                             sidebarIsHidden: true,
                         }]
                     }
@@ -83,6 +83,15 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 boxItemsList: newArray1,
+            }
+        case 'HANDLE_CHANGE_LABEL':
+            const index2 = state.boxItemsList.findIndex(item => item.id === action.payload.id);
+            const newArray2 = produce(state.boxItemsList, draftState =>{
+                draftState[index2].label = action.payload.text
+            })
+            return {
+                ...state,
+                boxItemsList: newArray2,
             }
         default:
             return state
