@@ -1,8 +1,10 @@
 import "./list-settings.styles.scss";
 import TextArea from "../text-area/text-area.component";
+import Checkbox from "../checkbox/checkbox.component";
 import { connect } from "react-redux";
 import { handleChangeLabel } from "../../redux/box-items/box-items.actions";
 import { handleChangeNumberOfElements } from "../../redux/box-items/box-items.actions";
+import { changeOrderedCheckbox } from "../../redux/box-items/box-items.actions";
 
 const ListSettings = (props) => {
   const onHandleChangeLabel = (event) => {
@@ -11,6 +13,11 @@ const ListSettings = (props) => {
   const onHandleChangeNumberOfElements = (event) => {
     props.handleChangeNumberOfElements(props.boxItem.id, event.target.value);
   };
+
+  const onChangeOrderedCheckbox = () => {
+    props.changeOrderedCheckbox(props.boxItem.id);
+  };
+
   const numberNote = <div className="note">You must enter a number</div>;
 
   return (
@@ -31,7 +38,9 @@ const ListSettings = (props) => {
           : numberNote}
         {console.log(Number(props.boxItem.numberOfElements))}
       </div>
-      <div>Is ORDERED LIST</div>
+      <div>
+        Is ORDERED LIST <Checkbox func={onChangeOrderedCheckbox} />
+      </div>
     </div>
   );
 };
@@ -41,6 +50,7 @@ const mapDispatchToProps = (dispatch) => {
     handleChangeLabel: (id, text) => dispatch(handleChangeLabel(id, text)),
     handleChangeNumberOfElements: (id, text) =>
       dispatch(handleChangeNumberOfElements(id, text)),
+    changeOrderedCheckbox: (id) => dispatch(changeOrderedCheckbox(id)),
   };
 };
 

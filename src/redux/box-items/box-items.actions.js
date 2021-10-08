@@ -37,3 +37,13 @@ export const handleChangeNumberOfElements = (id, text) => ({
     type: 'HANDLE_CHANGE_NUMBER_OF_ELEMENTS',
     payload: { id, text },
 })
+
+export const changeRequiredCheckbox = (id) => ({
+    type: 'CHANGE_REQUIRED_CHECKBOX',
+    payload: id,
+})
+
+export const changeOrderedCheckbox = (id) => ({
+    type: 'CHANGE_ORDERED_CHECKBOX',
+    payload: id,
+})

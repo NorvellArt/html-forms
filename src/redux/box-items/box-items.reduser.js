@@ -28,9 +28,8 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
                         boxItemsList: [...state.boxItemsList, {
                             id: shortid.generate(),
                             name: action.payload,
-                            isRequired: false,
                             label: '',
-                            isOrdered: 'true',
+                            isOrdered: false,
                             numberOfElements: '',
                             sidebarIsHidden: true,
                         }]
@@ -41,7 +40,6 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
                         boxItemsList: [...state.boxItemsList, {
                             id: shortid.generate(),
                             name: action.payload,
-                            isRequired: false,
                             label: '',
                             sidebarIsHidden: true,
                         }]
@@ -119,6 +117,24 @@ const boxItemsReduser = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 boxItemsList: newArray5,
+            }
+        case 'CHANGE_REQUIRED_CHECKBOX':
+            const index6 = state.boxItemsList.findIndex(item => item.id === action.payload);
+            const newArray6 = produce(state.boxItemsList, draftState =>{
+                draftState[index6].isRequired = !state.boxItemsList[index6].isRequired
+            })
+            return {
+                ...state,
+                boxItemsList: newArray6,
+            }
+        case 'CHANGE_ORDERED_CHECKBOX':
+            const index7 = state.boxItemsList.findIndex(item => item.id === action.payload);
+            const newArray7 = produce(state.boxItemsList, draftState =>{
+                draftState[index7].isOrdered = !state.boxItemsList[index7].isRequired
+            })
+            return {
+                ...state,
+                boxItemsList: newArray7,
             }
         default:
             return state
