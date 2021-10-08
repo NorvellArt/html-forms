@@ -19,7 +19,6 @@ const ListSettings = (props) => {
   };
 
   const numberNote = <div className="note">You must enter a number</div>;
-
   return (
     <div>
       <div>

@@ -1,21 +1,25 @@
-.sidebar-console{
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 500px;
-    height: 100%;
-    background: white;
-    z-index: 1;
-    border-right: 1px solid rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
-    .sidebar-console-title{
-        position: relative;
-        left: 25px;
-        display: inline-block;
-        font-weight: 700;
-        font-size: 24px;
-        margin: 0 auto;
-        margin-top: 20px;
-    }
+.sidebar-console {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background: white;
+  z-index: 1;
+  border-right: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
+  font-weight: 600;
+  font-family: "Noto Sans Display";
+  font-size: 16px;
+  background-color: rgb(240, 240, 240);
+  .sidebar-console-title {
+    position: relative;
+    left: 25px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }

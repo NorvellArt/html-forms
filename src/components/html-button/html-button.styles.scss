@@ -1,0 +1,22 @@
+.html-button-container {
+  margin: 10px 0;
+  height: 31px;
+  .html-button {
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
+    border-radius: 5px;
+    background: #3b5998;
+    color: rgb(255, 255, 255);
+    padding: 8px 0;
+    font-weight: 700;
+    width: 250px;
+    font-weight: 600;
+    font-family: "Noto Sans Display";
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+      background: #273b66;
+    }
+  }
+}

@@ -31,7 +31,7 @@ const SettingsArea = (props) => {
   return (
     <div className="settings-area">
       <h3 className="settings-area-title">Settings</h3>
-      {settings}
+      <div className='settings-list'>{settings}</div>
     </div>
   );
 };

@@ -1,19 +1,22 @@
 .drop-area-item {
-    display: flex;
-    margin-bottom: 10px;
-    border: 1px solid rgba(34, 36, 38, 0.15);
-    box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
-    border-radius: 5px;
-    background: rgb(224, 225, 226);
-    color: rgba(0, 0, 0, 0.6);
-    padding: 5px 20px;
-    font-weight: 700;
-    justify-content: space-between;
-    height: 20px;
-    align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgb(34, 36, 38);
+  border-radius: 5px;
+  background: rgb(224, 225, 226);
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px 20px;
+  font-weight: 700;
+  justify-content: space-between;
+  height: 20px;
+  align-items: center;
+  font-weight: 600;
+  font-family: "Noto Sans Display";
+  font-size: 16px;
 
-    .buttons-block{
-        display: flex;
-        align-items: center;
-    }
+  .buttons-block {
+    display: flex;
+    align-items: center;
+  }
 }
