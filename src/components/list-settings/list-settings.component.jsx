@@ -20,13 +20,13 @@ const ListSettings = (props) => {
 
   const numberNote = <div className="note">You must enter a number</div>;
   return (
-    <div>
-      <div>
-        Enter LABEL{" "}
+    <div className='list-setting-container'>
+      <div className='list-setting-element'>
+        Enter HEADER:{" "}
         <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
       </div>
-      <div>
-        Enter NUMBER of ELEMETS{" "}
+      <div className='list-setting-element'>
+        Enter NUMBER of ELEMETS:{" "}
         <TextArea
           func={onHandleChangeNumberOfElements}
           value={props.boxItem.numberOfElements}
@@ -37,8 +37,8 @@ const ListSettings = (props) => {
           : numberNote}
         {console.log(Number(props.boxItem.numberOfElements))}
       </div>
-      <div>
-        Is ORDERED LIST <Checkbox func={onChangeOrderedCheckbox} />
+      <div className='list-setting-element'>
+        Is ORDERED LIST: <Checkbox value={props.boxItem.isOrdered} func={onChangeOrderedCheckbox} />
       </div>
     </div>
   );

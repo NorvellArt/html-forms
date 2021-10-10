@@ -16,7 +16,7 @@ const MainPage = () => {
         <DropArea />
         <ItemsList />
       </div>
-      {htmlPageHidden? null: <HtmlPage />}
+      {htmlPageHidden? null: <HtmlPage func={() => (setHtmlPageHidden(!htmlPageHidden))} />}
       <HtmlButton func={() => (setHtmlPageHidden(!htmlPageHidden))} />
     </div>
   );

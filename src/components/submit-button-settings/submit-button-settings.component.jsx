@@ -11,7 +11,7 @@ const SubmitButtonSettings = (props) => {
   return (
     <div>
       <div>
-        Enter VALUE of BUTTON <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
+        Enter TEXT on BUTTON: <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
       </div>
     </div>
   );

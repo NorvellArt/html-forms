@@ -22,17 +22,17 @@ const TextInputSettings = (props) => {
   };
 
   const typeNote = (
-    <div className="note">'Type must be: "text", "email", "tel", "number"'</div>
+    <div className="note">Type must be: "text", "email", "tel", "number"</div>
   );
 
   return (
     <div>
-      <div>
-        Enter LABEL{" "}
+      <div className='text-input-settings'>
+        Enter LABEL:{" "}
         <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
       </div>
-      <div>
-        Enter TYPE{" "}
+      <div className='text-input-settings'>
+        Enter TYPE:{" "}
         <TextArea func={onHandleChangeType} value={props.boxItem.type} />
         {props.boxItem.type === "text" ||
         props.boxItem.type === "" ||
@@ -42,16 +42,17 @@ const TextInputSettings = (props) => {
           ? null
           : typeNote}
       </div>
-      <div>
-        Enter PLACEHOLDER{" "}
+      <div className='text-input-settings'>
+        Enter PLACEHOLDER:{" "}
         <TextArea
           func={onHandleChangePlaceholder}
           value={props.boxItem.placeholder}
         />
       </div>
-      <div>
-        Is field REQUIRED <Checkbox func={onChangeRequiredCheckbox}/>
+      <div className='text-input-settings'>
+        Is field REQUIRED: <Checkbox value={props.boxItem.isRequired} func={onChangeRequiredCheckbox}/>
       </div>
+      {console.log(props)}
     </div>
   );
 };

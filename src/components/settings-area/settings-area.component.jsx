@@ -4,7 +4,6 @@ import ListSettings from "../list-settings/list-settings.component";
 import CheckboxSettings from "../checkbox-settings/checkbox-settings.component";
 import SubmitButtonSettings from "../submit-button-settings/submit-button-settings.component";
 
-
 const SettingsArea = (props) => {
   const { boxItem } = props;
 
@@ -31,7 +30,9 @@ const SettingsArea = (props) => {
   return (
     <div className="settings-area">
       <h3 className="settings-area-title">Settings</h3>
-      <div className='settings-list'>{settings}</div>
+      <div className="settings-list">
+        <div className="settings-item">{settings}</div>
+      </div>
     </div>
   );
 };

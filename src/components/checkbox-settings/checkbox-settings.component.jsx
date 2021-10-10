@@ -11,7 +11,7 @@ const CheckboxSettings = (props) => {
   return (
     <div>
       <div>
-        Enter LABEL <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
+        Enter LABEL: <TextArea func={onHandleChangeLabel} value={props.boxItem.label} />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const SidebarConsole = (props) => {
   return (
     <div className="sidebar-console">
       <h2 className="sidebar-console-title">{props.boxItem.name}</h2>
-      <CloseConsole onHandleCloseEditConsole={onHandleCloseEditConsole} />
+      <CloseConsole func={onHandleCloseEditConsole} />
       <SettingsArea boxItem={props.boxItem} />
     </div>
   );
